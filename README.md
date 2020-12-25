@@ -106,10 +106,14 @@ Lo primero que hay que hacer al entrar al editor es cargar el archivo PKF de equ
 
 Una vez cargado el fichero PKF se habilitarán los menús para comenzar la edición.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor1.png) 
+
 ## Edición de Equipos
 
 Se podrá consultar los equipos originales del archivo PKF, editar un equipo desde un fichero DBC,
 o generar un fichero DBC nuevo.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor2.png) 
 
 ### Consulta de equipos
 
@@ -117,6 +121,7 @@ Desde esta pantalla podremos consultar los equipos contenidos en el archivo PKF 
 inicio. Esto nos puede ser útil para conocer su puntero (tanto en formato decimal como en
 formato hexadecimal).
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor3.png) 
 
 Desde esta pantalla podremos realizar la búsqueda de equipos por nombre, puntero (si es que
 conocemos su puntero) o por país.
@@ -131,6 +136,8 @@ totalmente desde cero y también podremos importar datos desde una web.
 
 Desde aquí podremos definir todos los datos generales de un equipo. Los campos marcados en
 azul oscuro son obligatorios, los demás los guarda el propio editor de forma predeterminada.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor4.png) 
 
 Para guardar el fichero tendremos las siguientes opciones.
 
@@ -147,9 +154,13 @@ En la parte superior podemos ver los campos de los punteros. Estos campos no son
 están vacíos se guardará el fichero DBC con el nombre EQ970000.DBC, y los para los punteros
 de los jugadores se utilizarán de forma consecutiva desde el número 1.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor5.png) 
+
 Si pulsamos en el botón con los “...” se mostrará una ventana en la que podremos seleccionar
 un equipo. En esta ventana se muestran los equipos originales del archivo PKF cargado al inicio.
 En dicha ventana podremos buscar un equipo por nombre.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor6.png) 
 
 Al seleccionar un equipo se mostrará:
 
@@ -177,11 +188,14 @@ los punteros de jugadores que se utilizarán al guardar este fichero serán del 
 Desde aquí podremos editar la táctica que utilizará el equipo. Por defecto, si no seleccionamos
 nada se guarda lo que se muestra en la captura.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor7.png) 
+
 #### Pestaña Plantilla
 
 Desde esta pestaña podremos consultar la plantilla de jugadores que hay en el archivo DBC
 además de crear un jugador nuevo.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor8.png) 
 
 La lista de jugadores se ordenará por demarcación, siguiendo este orden: primero los porteros,
 después los defensas, los medios y por último los delanteros. Pulsando el botón “Nuevo”
@@ -200,6 +214,8 @@ equipos perfectamente actualizados.
 ### Acciones que se pueden realizar
 
 Desde la pantalla de edición de equipos se pueden realizar las siguientes acciones
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor9.png) 
 
 1: Editar las características de un jugador de la plantilla. Al pulsar este botón se accede a la
 pantalla de edición de jugador.
@@ -226,6 +242,8 @@ de jugador.
 Ejemplo: Al cargar el fichero “EQ970004.DBC” se busca en los equipos originales y se encuentra
 al Real Madrid:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor10.png) 
+
 De esta forma nos desentendemos de la gestión de los punteros, simplemente hay que ser un
 poco organizados con la edición y el editor se encarga del resto.
 
@@ -235,6 +253,7 @@ Podremos editar cualquier jugador contenido en un fichero DBC. Para editar a un 
 que cargar primero el archivo DBC y desde la pestaña plantilla presionar el botón “Editar”
 correspondiente la fila que contiene el jugador que queremos editar.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor11.png) 
 
 Los primeros campos corresponden al puntero del jugador. Esto sólo saldrá si el jugador ya está
 grabado previamente en el archivo DBC. Si estamos creando un jugador nuevo estos campos
@@ -253,17 +272,20 @@ Para la generación de las medias, se puede escribir la media total del jugador 
 encargará de generar las medias individuales. Si se deja vacío el campo de media total del
 jugador, aunque esté marcad en azul, el editor genera una media aleatoria.
 
-
 ## Abrir Archivo DBC
 
 Desde estas opciones de menú podremos abrir directamente archivos DBC sin pasar por la
 pantalla de Generar DBC. Si la carga es correcta se mostrará el equipo en la pantalla de
 Generación de DBC para proceder con la edición.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor12.png) 
+
 ## Importar información desde la WEB
 
 Al pulsar en el botón “Importar Equipo WEB” del formulario de Generación de DBC se nos
 mostrará la siguiente pantalla, desde la cual podremos:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor13.png) 
 
 1: Seleccionar la web desde la que vamos a intentar importar los datos. Actualmente el editor
 importa información desde las siguientes webs:
@@ -287,6 +309,8 @@ equipo.
 
 Si todo ha ido bien, se mostrarán los resultados en pantalla
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor14.png) 
+
 En el que podremos ver:
 
 1: Datos de la plantilla importada
@@ -304,6 +328,8 @@ IMPORTANTE: Las fotos quedan almacenadas en el directorio
 “\Imagenes\Actualizacion\Nombre_Largo_Equipo\” con el nombre largo de cada jugador. Por
 ejemplo, para el Arsenal, desde SOFIFA.COM (https://sofifa.com/team/1/arsenal/)
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor15.png) 
+
 Una vez acabada la importación de datos vemos como se generan las fotos con el nombre largo
 de cada jugador. Las imágenes quedarán en este directorio hasta que el usuario lo desee. Pero
 al realizar el guardado del archivo DBC el programa busca en este directorio por nombre largo
@@ -313,10 +339,16 @@ teniendo en cuenta su puntero de guardado.
 En este ejemplo, una vez pulsado el botón de aceptar vemos como se ha traspasado la
 información a la pantalla de Generación de DBC:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor16.png) 
+
 Una vez presionado el botón de guardar, además de generar el archivo DBC correspondiente se
 generan los archivos de foto de jugadores:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor17.png) 
+
 Y lo mismo para el escudo:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor18.png) 
 
 ## Edición de competiciones
 
@@ -328,10 +360,14 @@ búsqueda si no que en el editor están definidas las posiciones de los equipos 
 reemplazan unos equipos con otros. Esto permite abrir cualquier manager.exe editado
 previamente por otro usuario.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor19.png) 
+
 Al seleccionar una de las versiones el editor nos pedirá que indiquemos un archivo manager.exe
 para leerlo y presentarnos los equipos en pantalla.
 
 Para PC Fútbol 6.0:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor20.png) 
 
 En esta pantalla podremos:
 
@@ -352,10 +388,16 @@ Si presionamos el botón de guardar el archivo con los nuevos cambios estará en
 
 Para las competiciones tendremos la siguiente pantalla:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor21.png) 
+
 Pulsando en los botones “...” podremos seleccionar otro equipo.
 
 Lo mismo para el resto de versiones que se pueden seleccionar en el menú. Por ejemplo, para
 Argentina:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor22.png) 
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor23.png) 
 
 **IMPORTANTE** : Es necesario que para editar una versión del manager.exe estén cargados los
 equipos correspondientes a su archivo de equipos PKF.
@@ -364,6 +406,10 @@ equipos correspondientes a su archivo de equipos PKF.
 
 Podremos editar el calendario del juego, esto es, el año de comienzo del juego. Los juegos tienen
 fecha de comienzo 1997 o 1998.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor24.png) 
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor25.png) 
 
 Desde esta pantalla podremos:
 
@@ -388,12 +434,20 @@ Para seleccionar el escudo de un equipo y que automáticamente se genere el escu
 
 Desde la pantalla de Generación de archivos DBC
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor26.png) 
+
 Al presionar en el botón “Seleccionar Escudo” se abrirá un cuadro de diálogo para escoger el
 archivo de imagen que contiene el escudo. Una vez seleccionado se generará el archivo dentro
 de la ruta “\Imagenes\Escudos” con el nombre correcto teniendo en cuenta el puntero del
 equipo:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor27.png) 
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor28.png) 
+
 La otra forma es seleccionar el escudo desde la propia pantalla de edición de imágenes
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor29.png) 
 
 Desde este menú se podrán abrir archivos DBC tanto en formato 6.0 como en 5.0. Una vez
 cargado el fichero se mostrará la información de la plantilla de jugadores.
@@ -412,18 +466,25 @@ pc fútbol.
 Para realizar la selección de fotos de jugadores, y que automáticamente se generen los ficheros
 teniendo en cuenta los punteros de los jugadores podremos hacer lo siguiente:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor30.png) 
+
 Desde la pantalla de edición de jugador si presionamos el botón “Seleccionar Foto” se mostrará
 un cuadro de diálogo en el que podremos seleccionar la foto del jugador.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor31.png) 
 
 El archivo se guardará en la ruta “\Imagenes\Jugadores” y dentro de este directorio se creará
 una carpeta con el nombre del equipo (nombre teniendo en cuenta el puntero del equipo)
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor32.png) 
+
 La otra forma de seleccionar fotos para jugadores es desde el menú de imágenes, cargando un
 archivo DBC. Una vez cargado se mostrará la plantilla de jugadores, en la cual podremos
-
 seleccionar una foto para cada jugador. El procedimiento es el mismo, se presiona el botón y se
 muestra un cuadro de diálogo en el que se podrá seleccionar una foto. Una vez seleccionada se
 guardará en el directorio “\Imagenes\Jugadores”.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor33.png) 
 
 1: Se abrirá un cuadro de diálogo en el que podremos seleccionar una foto para el jugador
 correspondiente a la fila pulsada.
@@ -435,13 +496,20 @@ generados en el directorio del juego para que las fotos se vean correctamente.
 
 La foto estándar es el archivo “NOFOTO.bmp” que se encuentra en la raíz del programa.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor34.png) 
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor35.png) 
 
 ## Actualización masiva desde una web
 
 Uno de los puntos fuertes del editor es poder realizar actualizaciones masivas por lotes de cada
 liga de forma individual. Para ello seleccionaremos la opción Actualización del menú:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor36.png) 
+
 Esto nos abrirá la siguiente pantalla en la cual podremos configurar la actualización:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor37.png) 
 
 1: Tendremos que indicar si queremos seleccionar los ficheros para actualizar las ligas o
 actualizar directamente las ligas. No podremos actualizar las ligas sin generar antes los ficheros
@@ -450,9 +518,12 @@ directorio para cada liga del juego. Dentro de cada directorio correspondiente a
 creará un fichero que se llamará como el país en concreto y contendrá todos los equipos que
 tiene el juego en esa liga.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor38.png) 
 
 Dentro de cada directorio tendremos el archivo que contiene los equipos, por ejemplo para
 Bélgica:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor39.png) 
 
 2: Selección de la web desde la cual se va a actualizar de forma masiva.
 
@@ -477,12 +548,13 @@ en la ruta “\Imagenes\Jugdores” y “\Imagenes\Escudos”.
 Los ficheros generados para realizar la actualización de forma masiva tienen una estructura
 que debemos conocer para poder realizar la edición de equipos.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor40.png) 
+
 1: Puntero decimal del equipo. Necesario para generar el archivo DBC de forma automática. No
 deberíamos tocar este dato.
 
 2: Nombre del equipo original del juego. Necesario por si se marca la opción de guardar los
 ficheros con el nombre del equipo. No deberíamos tocar este dato.
-
 
 3: Intervalo de medias que queremos que tengan los jugadores. Este dato lo podemos tocar,
 tanto la cota inferior como la superior.
@@ -496,6 +568,8 @@ este dato.
 Podemos editar un archivo entero, para poner las medias y las url de las webs y actualizar esa
 liga. Por ejemplo, para Bélgica:
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor41.png) 
+
 Adicionalmente tenemos un botón para ver el LOG de errores y avisos.
 
 Si un fichero de una misma liga tiene direcciones web de las 3 webs admitidas por el editor
@@ -506,6 +580,8 @@ fichero de liga sea de footballsquads.
 ## Utilidades
 
 Desde este menú podremos realizar las siguientes acciones de forma rápida
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor42.png) 
 
 Abrir las rutas predefinidas para el editor como por ejemplo las rutas de imágenes, generación
 de equipos, managers, etc...
@@ -518,6 +594,8 @@ Vaciar la carpeta de Logs
 
 Lanzar un convertido entre decimal y hexadecimal integrado en el propio editor
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor43.png) 
+
 ## Logs
 
 Cada vez que se inicia una sesión del editor se genera un LOG en la carpeta “\Logs”. En este log
@@ -527,6 +605,7 @@ especialmente útil cuando se generan equipos desde internet.
 En pantalla se muestra un log con mensajes importantes para el usuario. Si hay algún error se
 da un mensaje genérico para que se consulte el log para obtener más detalles.
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor44.png) 
 
 ## Edición hexadecimal de archivos DBC
 
@@ -535,8 +614,9 @@ archivo DBC para un equipo
 
 ### Edición de datos del equipo
 
-La cadena desglosada con el significado para cada posición de bytes:
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor45.png) 
 
+La cadena desglosada con el significado para cada posición de bytes:
 
 - 436F7079726967687420286329313939362044696E616D6963204D756C74696D65646 961 : Separador de Dynamic Multimedia. Es una cadena fija.
 - CB0803020000: Cadena constante de comienzo de equipo.
@@ -566,6 +646,7 @@ Después de este dato vendrían los datos de los jugadores.
 
 ### Edición de datos de jugadores
 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor46.png) 
 
 - 01 : Cadena fija que marca el comienzo de la cadena de jugador. Es la misma para todo jugador.
 - 5B00: Puntero del jugador. No puede repetirse dentro de un mismo equipo.
