@@ -27,8 +27,9 @@ El manual completo (con capturas y en PDF) está en este enlace: [Manual Editor 
 
 Quisiera dedicar este proyecto a todo el mundo que durante este año ha perdido a alguien. Ha sido un año muy duro para todos, en el que hemos perdido, y no solo hemos perdido cercanos, hemos perdido leyendas, que de una manera u otra han marcado a una generación entera (mi generación).
 
-![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria5.png) 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria6.png) 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria5.png) 
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria7.jpg) 
 
 No voy a nombrar a ninguno de los grandes que se han ido en este 2020, por que sería injusto con respecto a los que se han ido y no son nombrados. Sin más mucha fuerza todos y ánimo para este 2021!
 
