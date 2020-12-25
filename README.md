@@ -74,6 +74,8 @@ generados con el editor. Dentro de DBDAT también tendrán que existir los direc
 fotos de los jugadores (“DBDAT\MINIFOTOS”) y escudos de los equipos (“DBDAT\MINIESC”,
 “DBDAT\NANOESC”) que se generen con el editor.
 
+Para poder usar el editor tenéis que tener instalado una versión reciente del .NET Framework de Microsoft.
+
 ## Versiones del juego aceptadas por el editor
 
 El editor funciona para las siguientes versiones del juego:
