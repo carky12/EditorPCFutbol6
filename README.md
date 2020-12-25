@@ -4,7 +4,8 @@
 
 #### Creado por carky12
 
-## DESCRIPCIÓN BREVE
+## Breve Descripción
+
 En este documento se exponen las explicaciones necesarias para poder utilizar el editor de pc fútbol 6.0. 
 
 El editor es válido para versiones 
@@ -18,6 +19,12 @@ El editor es válido para versiones
 Opcionalmente se puden generar archivos de equipo DBC para versiones 5.0
 
 El manual completo (con capturas y en PDF) está en este enlace: [Manual Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Manuales/Manual%20Editor%20PCF%C3%BAtbol%206.pdf)
+
+## Dedicatoria
+
+Quisiera dedicar este proyecto a todo el mundo que durante este año ha perdido a alguien. Ha sido un año muy duro para todos, en el que hemos perdido, y no solo hemos perdido cercanos, hemos perdido leyendas, que de una manera u otra han marcado a una generación entera (mi generación).
+
+No voy a nombrar a ninguno de los grandes que se han ido en este 2020, por que sería injusto con respecto a los que se han ido y no son nombrados. Sin más mucha fuerza todos y ánimo para este 2021!
 
 ## Índice
 
