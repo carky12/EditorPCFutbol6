@@ -10,9 +10,10 @@ necesarias para poder utilizar el editor de pc fútbol
 6.0. El editor es válido para versiones PC PREMIER,
 PC CALCIO, PC APERTURA, EXTENSIONES DE PCF 6 y
 para generar archivos de equipos para PC FUTBOL 5.
+```
 El manual completo (con capturas y en PDF) está en este enlace: 
 https://github.com/carky12/EditorPCFutbol6/blob/master/Manuales/Manual%20Editor%20PCF%C3%BAtbol%206.pdf
-```
+
 ### Autor
 
 ```
