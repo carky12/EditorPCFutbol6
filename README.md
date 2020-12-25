@@ -20,6 +20,15 @@ Opcionalmente se puden generar archivos de equipo DBC para versiones 5.0
 
 El manual completo (con capturas y en PDF) está en este enlace: [Manual Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Manuales/Manual%20Editor%20PCF%C3%BAtbol%206.pdf)
 
+Podéis ver los videos del Editor funcionando en los siguientes enlaces de YouTube:
+
+[Edición de competiciones](https://www.youtube.com/watch?v=SMxl0EtCkTs&feature=youtu.be&ab_channel=CarlosGonz%C3%A1lez)
+
+[Generación de archivos DBC](https://www.youtube.com/watch?v=ChxB0d5TN6Y&feature=youtu.be&ab_channel=CarlosGonz%C3%A1lez)
+
+[Actualzación masiva desde una web](https://www.youtube.com/watch?v=IAcNQdtkJOE&feature=youtu.be&ab_channel=CarlosGonz%C3%A1lez)
+
+
 ## Dedicatoria
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria1.png) 
