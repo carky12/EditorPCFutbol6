@@ -9,14 +9,21 @@
 En este documento se exponen las explicaciones necesarias para poder utilizar el editor de pc fútbol 6.0. 
 
 El editor es válido para versiones 
+- PC FÚTBOL 5.0
+- PC FÚTBOL 5.0 EXTENSION 1
+- PC FÚTBOL 5.0 EXTENSION 2
+- PC FÚTBOL 5.0 EDICIÓN ORO
 - PC FÚTBOL 6.0
 - PC FÚTBOL 6.0 EXTENSION 1
 - PC FÚTBOL 6.0 EXTENSION 2
-- PC PREMIER
-- PC CALCIO
-- PC APERTURA
-
-Opcionalmente se puden generar archivos de equipo DBC para versiones 5.0
+- PC FÚTBOL 6.0 PLUS
+- PC FÚTBOL 6.0 EDICIÓN ORO
+- PC FRANCE 5.0
+- PC PREMIER 6.0
+- PC CALCIO 5.0
+- PC CALCIO 6.0
+- PC APERTURA 5.0 (97)
+- PC APERTURA 5.0 (98)
 
 El manual completo (con capturas y en PDF) está en este enlace: [Manual Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Manuales/Manual%20Editor%20PCF%C3%BAtbol%206.pdf)
 
@@ -86,21 +93,24 @@ El editor funciona para las siguientes versiones del juego:
 - PC Premier 6.0: Archivo de equipos EQ030022.PKF. Tamaño del manager 2771 KB.
 - PC Calcio 6.0: Archivo de equipos EQ036022.PKF. Tamaño del manager 2513 KB.
 - PC Apertura 6.0: Archivo de equipos EQ003003.PKF. Tamaño del manager 2397 KB.
+- Para el resto de versiones se pueden generar y editar archivos DBC pero no se permite editar las competiciones ni el calendario.
 
 En estas versiones se pueden editar lo siguiente:
 
 Generación de equipos
-- Edición de equipos a partir de un archivo DBC
-- Edición de jugadores contenidos en un archivo DBC
-- Edición de las competiciones del archivo manager.exe
-- Edición del calendario.
+Generación de equipos.
+- Edición de equipos a partir de un archivo DBC.
+- Edición de jugadores contenidos en un archivo DBC.
+- Edición de los archivos originales del juego.
+- Generación de equipos de juveniles.
+- Intercambio de jugadores entre dos archivos DBC.
+- Edición de las competiciones del archivo manager.exe.
+- Edición del año de comienzo del juego.
 - Seleccionar fotos para jugadores.
 - Seleccionar escudos para equipos.
 - Actualización automática de equipos desde una página de internet.
 
-El editor permite guardar archivos DBC con el formato para cualquier versión 5.0 del juego, sin
-embargo, por ahora, no se pueden editar ni el calendario ni las competiciones de estas
-versiones.
+El editor permite guardar archivos DBC válidos para cualquier versión 5.0 y 6.0 del juego.
 
 ## Rutas que utiliza el editor
 
@@ -119,6 +129,22 @@ Una vez cargado el fichero PKF se habilitarán los menús para comenzar la edici
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor1.png) 
 
+## Generar DBC Originales
+
+Con esta opción podremos generar todos los archivos DBC correspondientes a los equipos originales del juego. Estos archivos contendrán los datos (jugadores, entrenadores y datos de la base de datos) originales del juego.
+
+Al realizar la carga se nos pedirá que seleccionemos un archivo PKF original para comenzar la generación.
+
+Esta opción permite con la edición posterior del archivo DBC correspondiente editar la información contenida en los equipos originales del juego.
+
+Los ficheros DBC se generarán dentro de la ruta de “EquiposDBC” del editor, y dentro de esta en una carpeta llamada con el archivo PKF que se seleccionó para la carga.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor1-1.png) 
+
+Con esta opción se generan los archivos DBC para todos los equipos contenidos en el archivo PKF. Posteriormente veremos un método para generar solo un fichero DBC para un equipo concreto.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor1-2.png) 
+
 ## Edición de Equipos
 
 Se podrá consultar los equipos originales del archivo PKF, editar un equipo desde un fichero DBC,
@@ -134,8 +160,15 @@ formato hexadecimal).
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor3.png) 
 
-Desde esta pantalla podremos realizar la búsqueda de equipos por nombre, puntero (si es que
-conocemos su puntero) o por país.
+Desde esta pantalla podremos realizar la búsqueda de equipos por nombre, puntero (si es que conocemos su puntero) o por país.
+
+Además, podremos generar un archivo DBC correspondiente al equipo seleccionado en la lista, con el objetivo de su posterior edición. Este archivo DBC contendrá toda la información del equipo seleccionado, es decir, los datos del equipo, los datos de sus jugadores y además toda la información contenida en la base de datos para del juego de su entrenador y jugadores.
+
+Podremos guardar el fichero DBC utilizando el nombre del equipo marcando la opción correspondiente.
+
+En la lista de equipos se informa de si el equipo corresponde a una liga extranjera o es de tipo nacional. Esto influye en el nivel de información que llevará el fichero. Un fichero de liga nacional podrá contener información que se muestra en la base de datos del juego, como el perfil del entrenador, anécdotas, declaraciones, etc…
+
+Dependiendo de la versión un equipo puede ser de liga nacional o de liga extranjera, por ejemplo, para la versión argentina los equipos nacionales (los que contienen información de base de datos) son los que tienen el país Argentina. Estos mismos equipos en la versión Premier por ejemplo están considerados como de liga extranjera, no guardando por tanto ninguna información de base de datos. A la hora de guardar un archivo DBC el editor nos permite generar el archivo como si fuese para liga extrajera o para liga nacional, o ambos ficheros a la vez.
 
 ### Nuevo archivo DBC
 
@@ -152,23 +185,21 @@ azul oscuro son obligatorios, los demás los guarda el propio editor de forma pr
 
 Para guardar el fichero tendremos las siguientes opciones.
 
-1: Generar EQ96XXXX.DBC: Si marcamos esta opción el archivo se generará con el nombre
-“EQ96” en lugar de “EQ97”.
+1: Generar EQ96XXXX.DBC: Si marcamos esta opción el archivo se generará con el nombre “EQ96” en lugar de “EQ97”.
 
-2: Usar nombre de equipo para generar el archivo DBC: Si marcamos esta opción se guardará el
-archivo usando el nombre real del equipo en lugar de “EQ97XXXX.DBC”
+2: Usar nombre de equipo para generar el archivo DBC: Si marcamos esta opción se guardará el archivo usando el nombre real del equipo en lugar de “EQ97XXXX.DBC”
 
-3: Usar formato 5.0 al guardar el archivo: Si marcamos esta opción se guardará un archivo DBC
-respetando el formato de las versiones PCF 5.0.
+3: No guardar información de base de datos del juego: Si marcamos esta opción se guardará el equipo sin tener en cuenta la información de base de datos, esta opción sólo es útil para equipos de Liga Nacional (que tengan el campo Liga Extranjera NO) ya que es para los únicos para los que se puede grabar información de base de datos. Si marcamos esta opción por tanto no se guardará la información de base de datos relativa a información de jugadores, entrenadores y datos de competiciones, y en su lugar se guardará una cadena genérica con una “x”.
 
-En la parte superior podemos ver los campos de los punteros. Estos campos no son editables. Si
-están vacíos se guardará el fichero DBC con el nombre EQ970000.DBC, y los para los punteros
-de los jugadores se utilizarán de forma consecutiva desde el número 1.
+4: Generar versiones nacional y extranjera: Esta opción nos permitirá guardar 2 archivos DBC, uno con el formato de equipo de liga nacional y otro con formato de liga extranjera. Esto puede ser útil cuando estamos editando varias versiones del juego. Por ejemplo, para la versión española el Sevilla debería tener el campo Liga Extranjera NO, pero para la versión argentina debería tener Liga Extranjera SI. Dependiendo de si es un equipo de Liga Extranjera o no se guardará más o menos información en el fichero DBC. Por tanto, con esta opción podemos generar los dos ficheros con de una sola tacada.
+
+5: Utilizar punteros propios del DBC para los jugadores: Esta opción sólo estará disponible si cargamos un fichero DBC. Si marcamos esta opción no se utilizarán los punteros para los jugadores sugeridos por el editor, sino que se respetarán los punteros de jugadores que ya tuviese el fichero DBC.
+
+En la parte superior podemos ver los campos de los punteros. Estos campos no son editables. Si están vacíos se guardará el fichero DBC con el nombre EQ970000.DBC, y los para los punteros de los jugadores se utilizarán de forma consecutiva desde el número 1.
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor5.png) 
 
-Si pulsamos en el botón con los “...” se mostrará una ventana en la que podremos seleccionar
-un equipo. En esta ventana se muestran los equipos originales del archivo PKF cargado al inicio.
+Si pulsamos en el botón con los “...” se mostrará una ventana en la que podremos seleccionar un equipo. En esta ventana se muestran los equipos originales del archivo PKF cargado al inicio.
 En dicha ventana podremos buscar un equipo por nombre.
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor6.png) 
@@ -181,18 +212,9 @@ Al seleccionar un equipo se mostrará:
 
 3: el nombre del equipo y el nombre del fichero DBC que resultará al guardar
 
-4: los punteros de jugadores que se utilizarán. Se reservan 49 punteros para cada equipo,
-empezando en el primer equipo (Barcelona) que se reservan los punteros del 1 al 50, para el
-segundo equipo (Deportivo) del 51 al 100, y así hasta el último equipo.
+4: los punteros de jugadores que se utilizarán. Se reservan 49 punteros para cada equipo, empezando en el primer equipo (Barcelona) que se reservan los punteros del 1 al 50, para el segundo equipo (Deportivo) del 51 al 100, y así hasta el último equipo. Si se marca la opción de “Utilizar punteros propios del archivo DBC para jugadores” no se generarán los punteros sugeridos por el editor si no que se respetarán los que tenga el fichero cargado.
 
-**IMPORTANTE** : Al cargar un fichero, se intenta buscar el puntero entre la lista de equipos
-originales cargados (archivo PKF). Si por lo que fuese no se encuentra el puntero y se guarda de
-nuevo el fichero DBC se sobrescribirán los punteros de jugadores. Ejemplo: Si tienes un fichero
-EQ970004.DBC al cargarlo se realizará la búsqueda de cuál es el equipo que tiene e puntero
-“0004” decimal. Resultará el Real Madrid, con lo que se rellenarán los campos correspondientes
-y los punteros de jugadores serán los mismos, es decir, del 151 al 200. Si el archivo que cargamos
-se llama EQ979999.DBC, no se encontrará ningún equipo con puntero decimal “9999” por lo que
-los punteros de jugadores que se utilizarán al guardar este fichero serán del 1 al 50.
+**IMPORTANTE** : Al cargar un fichero, se intenta buscar el puntero entre la lista de equipos originales cargados (archivo PKF). Si por lo que fuese no se encuentra el puntero y se guarda de nuevo el fichero DBC se sobrescribirán los punteros de jugadores. Ejemplo: Si tienes un fichero EQ970004.DBC al cargarlo se realizará la búsqueda de cuál es el equipo que tiene e puntero “0004” decimal. Resultará el Real Madrid, con lo que se rellenarán los campos correspondientes y los punteros de jugadores serán los mismos, es decir, del 151 al 200. Si el archivo que cargamos se llama EQ979999.DBC, no se encontrará ningún equipo con puntero decimal “9999” por lo que los punteros de jugadores que se utilizarán al guardar este fichero serán del 1 al 50.
 
 #### Pestaña de Tácticas
 
@@ -201,6 +223,12 @@ nada se guarda lo que se muestra en la captura.
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor7.png) 
 
+Desde aquí podremos editar la táctica que utilizará el equipo. Por defecto, si no seleccionamos nada se guarda el sistema 442 y los valores por defecto para las tácticas de equipo.
+
+Además de las tácticas predefinidas podremos cargar una táctica personalizada para el equipo, seleccionando un fichero que contenga una táctica válida.
+
+Cuando se carga un fichero DBC se identifica la táctica que tiene, y si no coincide con ninguna de las tácticas predefinidas se marcará la opción “El equipo tiene una Táctica Personalizada”.
+
 #### Pestaña Plantilla
 
 Desde esta pestaña podremos consultar la plantilla de jugadores que hay en el archivo DBC
@@ -208,19 +236,37 @@ además de crear un jugador nuevo.
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor8.png) 
 
-La lista de jugadores se ordenará por demarcación, siguiendo este orden: primero los porteros,
-después los defensas, los medios y por último los delanteros. Pulsando el botón “Nuevo”
-accederemos a la pantalla de creación de jugadores.
+La lista de jugadores se ordenará por demarcación, siguiendo este orden: primero los porteros, después los defensas, los medios y por último los delanteros. Pulsando el botón “Nuevo” accederemos a la pantalla de creación de jugadores.
 
-En la lista podremos consultar el nombre corto del jugador, el nombre largo del jugador, la media
-global, la demarcación, podremos acceder a la edición de sus datos y borrarlo de la plantilla.
+En la lista podremos consultar el nombre corto del jugador, el nombre largo del jugador, la media global, la demarcación, podremos acceder a la edición de sus datos y borrarlo de la plantilla.
 
-**IMPORTANTE** : Debido a la ordenación de los jugadores en la lista si tenemos un equipo con 25
-jugadores con sus respectivos punteros, y añadimos un portero, se recalcularán los punteros de
-los 26 jugadores (ya que se ha incrustado un jugador en medio de otros ya existentes). Hay que
-tener esto en cuenta por si tenemos fotos de jugadores asociados a punteros de equipos ya
-guardados. Por eso lo mejor es dejar la edición de las fotos para cuando se tengan todos los
-equipos perfectamente actualizados.
+**IMPORTANTE**: Debido a la ordenación de los jugadores en la lista si tenemos un equipo con 25 jugadores con sus respectivos punteros, y añadimos un portero, se recalcularán los punteros de los 26 jugadores (ya que se ha incrustado un jugador en medio de otros ya existentes). Hay que tener esto en cuenta por si tenemos fotos de jugadores asociados a punteros de equipos ya guardados. Por eso lo mejor es dejar la edición de las fotos para cuando se tengan todos los equipos perfectamente actualizados.
+
+Desde esta pestaña estará disponible un menú contextual para facilitar la edición. Sobre un jugador que esté seleccionado en la grid de jugadores al pulsar con el botón derecho del ratón nos saldrá un menú en el que podremos realizar las siguientes acciones:
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor8-1.png) 
+
+Nuevo jugador: Nos llevará a la pantalla para crear un nuevo jugador.
+
+Editar jugador: Nos llevará a la pantalla de edición de jugadores con los datos del jugador seleccionado cargados para poder editarlos.
+
+Borrar jugador: borrará el jugador de la plantilla del equipo.
+
+Copiar jugador: Creará una copia exacta del jugador seleccionado. El puntero del nuevo jugador se copiará vacío, para que al guardar el equipo se le asigne uno.
+
+#### Pestaña de Datos de Competiciones
+
+Desde esta pestaña podremos consultar y editar los datos de competiciones del equipo. Esta pestaña sólo estará visible si el equipo tiene el campo Liga Extranjera a NO. Esta información se podrá visualizar en la base de datos del juego. Si no se cubre nada el editor genera unos datos por defecto.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor8-2.png) 
+
+La cadena de Palmarés no se ha desarrollado de forma visual ya que es totalmente dependiente de la versión del juego para el que se cree el archivo DBC. Por tanto, hay que conocer la estructura de la cadena para saber qué información poner. Por ejemplo, para la versión española los cuatro primeros bytes corresponden a la copa del rey. Lo único a tener en cuenta es que la cadena de palmarés, para los archivos DBC que genera el editor, tiene que medir 68 caracteres.
+
+#### Pestaña de Datos de Entrenador
+
+Desde esta pestaña podremos consultar y editar los datos del entrenador del equipo. Esta pestaña sólo estará visible si el equipo tiene el campo Liga Extranjera a NO. Esta información se podrá visualizar en la base de datos del juego. Si no se cubre nada el editor genera unos datos por defecto.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor8-3.png) 
 
 ### Acciones que se pueden realizar
 
@@ -228,60 +274,45 @@ Desde la pantalla de edición de equipos se pueden realizar las siguientes accio
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor9.png) 
 
-1: Editar las características de un jugador de la plantilla. Al pulsar este botón se accede a la
-pantalla de edición de jugador.
+1: Añadir un nuevo jugador a la plantilla. Al pulsar este botón se accede a la pantalla de edición de jugador.
 
-2: Borrar un jugador de la plantilla.
+2: Editar las características de un jugador de la plantilla. Al pulsar este botón se accede a la pantalla de edición de jugador.
 
-3: Guardar un archivo DBC.
+3: Borrar un jugador de la plantilla.
 
-4: Cargar un archivo DBC (con formato 6.0). Se muestra un cuadro de diálogo en el que se podrá
-seleccionar un fichero DBC.
+4: Guardar un archivo DBC: Guarda la información del equipo en un fichero DBC.
 
-5: Cargar n archivo DBC (con formato 5.0). Se muestra un cuadro de diálogo en el que se podrá
-seleccionar un fichero DBC.
+5: Cargar un archivo DBC. Se muestra un cuadro de diálogo en el que se podrá seleccionar un fichero DBC.
 
-6: Importar información desde la web. Al pulsar este botón se accede a la pantalla de importar
-información.
-
-7: Seleccionar una imagen de escudo para el equipo. Se muestra un cuadro de diálogo en el que
-se podrá seleccionar un fichero DBC.
-
-8: Añadir un nuevo jugador a la plantilla. Al pulsar este botón se accede a la pantalla de edición
-de jugador.
-
-Ejemplo: Al cargar el fichero “EQ970004.DBC” se busca en los equipos originales y se encuentra
-al Real Madrid:
+Ejemplo: Al cargar el fichero “EQ970004.DBC” se busca en los equipos originales y se encuentra al Real Madrid:
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor10.png) 
 
-De esta forma nos desentendemos de la gestión de los punteros, simplemente hay que ser un
-poco organizados con la edición y el editor se encarga del resto.
+De esta forma nos desentendemos de la gestión de los punteros, simplemente hay que ser un poco organizados con la edición y el editor se encarga del resto.
+
+6: Importar información desde la web. Al pulsar este botón se accede a la pantalla de importar información.
+
+7: Seleccionar una imagen de escudo para el equipo. Se muestra un cuadro de diálogo en el que se podrá seleccionar un fichero DBC.
 
 ## Edición de Jugadores
 
-Podremos editar cualquier jugador contenido en un fichero DBC. Para editar a un jugador hay
-que cargar primero el archivo DBC y desde la pestaña plantilla presionar el botón “Editar”
-correspondiente la fila que contiene el jugador que queremos editar.
+Podremos editar cualquier jugador contenido en un fichero DBC. Para editar a un jugador hay que cargar primero el archivo DBC y desde la pestaña plantilla presionar el botón “Editar” correspondiente la fila que contiene el jugador que queremos editar.
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor11.png) 
 
-Los primeros campos corresponden al puntero del jugador. Esto sólo saldrá si el jugador ya está
-grabado previamente en el archivo DBC. Si estamos creando un jugador nuevo estos campos
-siempre estarán vacíos. Los punteros se le asignarán al jugador a la hora de guardar el archivo,
-teniendo las siguientes opciones:
+Los primeros campos corresponden al puntero del jugador. Esto sólo saldrá si el jugador ya está grabado previamente en el archivo DBC. Si estamos creando un jugador nuevo estos campos siempre estarán vacíos. Los punteros se le asignarán al jugador a la hora de guardar el archivo, teniendo las siguientes opciones:
+- Se ha seleccionado un equipo para guardar el archivo DBC: Se utilizarán los punteros correspondientes para ese equipo (asignados por el editor de forma automática). Por ejemplo, para el Madrid los punteros son del 151 al 200.
 
-- Se ha seleccionado un equipo para guardar el archivo DBC: Se utilizarán los punteros
-correspondientes para ese equipo (asignados por el editor de forma automática). Por
-ejemplo, para el Madrid los punteros son del 151 al 200.
-- No se ha seleccionado un equipo para guardar el archivo DBC: Se utilizarán los punteros
-desde el 1 al 50.
+- No se ha seleccionado un equipo para guardar el archivo DBC: Se utilizarán los punteros desde el 1 al 50.
 
-Del resto de datos sólo serán obligatorios para generar al jugador los marcados en azul oscuro.
-El resto de datos los asigna el editor de forma genérica.
-Para la generación de las medias, se puede escribir la media total del jugador y el editor se
-encargará de generar las medias individuales. Si se deja vacío el campo de media total del
-jugador, aunque esté marcad en azul, el editor genera una media aleatoria.
+- Utilizar los punteros de los jugadores ya grabados en el archivo DBC. Se respetarán los punteros de los jugadores del archivo cargado.
+
+Del resto de datos sólo serán obligatorios para generar al jugador los marcados en azul oscuro. El resto de datos los asigna el editor de forma genérica.
+Para la generación de las medias, se puede escribir la media total del jugador y el editor se encargará de generar las medias individuales. Si se deja vacío el campo de media total del jugador, aunque esté marcad en azul, el editor genera una media aleatoria.
+
+Si el jugador pertenece a un equipo de una Liga Nacional (campo Liga Extranjera NO) tendremos disponible una pestaña con Datos del Jugador. En esta pestaña podremos editar la información que se guarda del jugador y es mostrada en la base de datos del juego.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor11-1.png) 
 
 ## Abrir Archivo DBC
 
@@ -307,7 +338,9 @@ importa información desde las siguientes webs:
 
 [http://www.bdfutbol.com](http://www.bdfutbol.com)
 
-Nota: Sólo desde las 2 últimas se podrán descargar imágenes de jugadores y escudos.
+[http://www.bdfa.com](http://www.bdfa.com)
+
+Nota: Sólo desde las webs de bdfutbol y sofifa se podrán descargar imágenes de jugadores y escudos.
 
 2: Introducir la URL del equipo que queremos actualizar.
 
@@ -588,6 +621,34 @@ tendremos que realizar 3 veces el proceso de actualización, seleccionando una w
 actualización. El editor comprueba que si has seleccionado footballsquads el link que esté en el
 fichero de liga sea de footballsquads.
 
+## Intercambio de jugadores
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor41-1.png) 
+
+Seleccionando esta opción accederemos a la pantalla que nos permitirá intercambiar jugadores entre dos archivos DBC.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor41-2.png) 
+
+1 y 2: Presionando este botón cargaremos la plantilla del equipo correspondiente al archivo DBC seleccionado.
+
+3: Se pasará el jugador seleccionado del equipo de la izquierda al de la derecha.
+
+4: Se pasará el jugador seleccionado del equipo de la derecha al de la izquierda.
+
+5: Se intercambiarán los jugadores seleccionados.
+
+6 y 8: Se guardará la información de cada equipo en su correspondiente fichero DBC.
+
+7 y 9: Se muestra la información correspondiente a los punteros que asigna el editor a dicho equipo.
+
+**Importante**: Cuando se intercambia un jugador entre equipos se respeta el puntero que tiene el jugador, es decir no se genera un puntero nuevo, se guarda la información del jugador en el nuevo equipo respetando el puntero que el jugador ya traía del otro equipo.
+
+## Juveniles
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor41-3.png) 
+
+Desde estas opciones de menú accederemos a la edición de equipos. La pantalla es la misma a la que accedemos desde la opción equipos del menú. Con la diferencia de que lo que se creará es un DBC de juveniles. Un archivo DBC de juveniles carece de la información de base de datos, además de que el límite de jugadores es de 150.
+
 ## Utilidades
 
 Desde este menú podremos realizar las siguientes acciones de forma rápida
@@ -629,29 +690,70 @@ archivo DBC para un equipo
 
 La cadena desglosada con el significado para cada posición de bytes:
 
-- 436F7079726967687420286329313939362044696E616D6963204D756C74696D65646 961 : Separador de Dynamic Multimedia. Es una cadena fija.
-- CB0803020000: Cadena constante de comienzo de equipo.
-- 0B00 3304000D412C0005130805: Longitud de nombre corto seguido del nombre corto del equipo.
-- 1100 32000F150800060E412304130F00038814: Longitud del nombre del estadio seguido del nombre del estadio.
-- 16 : Código del país al que pertenece el equipo.
+- 436F7079726967687420286329313939362044696E616D6963204D756C74696D65646961: Separador de Dynamic Multimedia. Es una cadena fija.
+- FE06: Primeros bytes del archivo. Se tomarán como cadena fija.
+- FE01: Cadena que indica la versión del fichero generado. La versión del fichero influye en la cantidad de información que contiene.
+- 00: Idioma del fichero (español, inglés, etc…). El editor siempre guardará 00 correspondiente al idioma español.
+- 00: Indica si el equipo es un equipo de liga nacional (jugable) o pertenece a una liga extranjera. Si pertenece a una liga extranjera toda la información de base de datos relativa a entrenador y jugadores no se guardará. En este caso es un fichero de liga nacional (00. Liga extranjera sería 01).
+- 1000 3304000D412C000513080541224F274F: Longitud de nombre corto seguido del nombre corto del equipo. En este caso “Real Madrid C.F.” que ocupa 16 caracteres es decir 0010 en hexadecimal.
+- 1100 32000F150800060E412304130F00038814: Longitud del nombre del estadio seguido del nombre del estadio. En este caso “Santiago Bernabéu”.
+- 16: Código del país al que pertenece el equipo. Consultar la lista de códigos de equipo.
 - 1A00 3304000D412C000513080541220D140341050441279B15030E0D: Longitud de nombre largo seguido del nombre largo del equipo.
-- E23901: Capacidad del estadio. Para convertirlo a decimal se tienen que dar la vuelta a los bytes, en este ejemplo quedaría 0139E2, lo que pasado a decimal son 80.354.
-- 000000000046006900 : Cadena fija con la longitud del terreno de juego.
+- D85301: Capacidad del estadio. Para convertirlo a decimal se tienen que dar la vuelta a los bytes, en este ejemplo quedaría 0153D8, lo que pasado a decimal son 87.000.
+- 00: Separador de cadena fijo.
+- 000000: Capacidad del estadio para aforo de pie. Para convertirlo a decimal se tienen que dar la vuelta a los bytes.
+- 00: Separador de cadena fijo.
+- 46006A00: Cadena fija con la longitud del terreno de juego. En este caso 70 x 106.
 - 6E07: Año de fundación del club. Para pasarlo a decimal hay que invertir los pares de bytes. En este ejemplo sería 076E, que pasado a decimal es 1902.
-- 88E70400: Número de socios del club.
-- 0100 4F: Longitud del presidente seguido del nombre del presidente.
-- 802500 00 802500 00 : Presupuesto de la base de datos seguido del separador constante “00”, seguido del presupuesto para el juego y seguido por el separador constante “00”. Hay que invertir los 3 pares de bytes para pasarlo a decimal. En este ejemplo sería 002580 lo que equivale a 9600 millones de pesetas. El presupuesto tiene que ir en pesetas.
-- 0100 4F: Longitud del patrocinador seguido del nombre del patrocinador.
-- 0600 200508050012 : Longitud de la indumentaria seguido del nombre de la indumentaria.
+- 701101: Número de socios del club. Para pasarlo a decimal hay que invertir los bytes, quedando 011170 lo que en decimal corresponde a 70.000.
+- 00: Separador de cadena fijo.
+- 1400 2D0E13040F1B0E4132000F1B412C000F0204030E: Longitud del presidente seguido del nombre del presidente. En este caso “Lorenzo Sanz Mancebo”.
+- 504600: Presupuesto para el juego del equipo. En este caso, invirtiendo los bytes queda 004650, que corresponde a 18.000 millones. El presupuesto va en pesetas.
+- 00: Separador de cadena fijo.
+- 504600: Presupuesto real del equipo. El editor guardará el mismo valor que el del presupuesto del juego.
+- 0400 35242A20: Longitud del patrocinador seguido del nombre del patrocinador. En este caso “TEKA”.
+- 0600 202528252032: Longitud de la indumentaria seguido del nombre de la indumentaria. En este caso “ADIDAS”.
 - FFFF: Puntero del equipo filial. Si no hay equipo filial se pone un FFFF.
-- FFFF00020005000100050001000A0007000F00010001000000000000000000000000000000000B020202020 302010101010101010101010101020101010101010103030404040301010101010000000000000000000000000000000000000201000000000000000000000000000000000000000000000000000000000000 : Cadena con los datos del equipo en lo respectivo a comentarios y competiciones. En el editor esta cadena siempre será fija.
-- 000042002A004200000058000000580000008400B00042002E009E008000A70000000000D40058002D0012007E00070000002E0087006A002A006E0066006F0000002B0085006D002A00420062003F002700250095007A00410056008E006900600036009B00600076005A00D6005B0060006100920063006A008400D1007E007A002C00C4006E00910049000A0161004B00140098004F0061002A00BC002A0090000000AD006E0093002A000B013D00: Táctica definida para el equipo.
-- 4F1E0201000101: Táctica de equipo
-- 02 : Comienzo de la cadena de entrenador. Es una cadena fija.
-- 0400 : Puntero del entrenador.
-- 0600 3B0805000F04: Longitud del nombre corto del entrenador seguido del nombre corto del entrenador.
-- 1500 3B080F0405080F044138001B0805413B2825202F24: Longitud del nombre largo seguido del nombre largo del entrenador.
-- 01001901001901001901001901001910002F254D2F254D2F254D2F254D2F256C6B031 0002F254D2F254D2F254D2F254D2F256C6B010019: Cadena fija después del nombre largo del entrenador.
+- FFFF: Puntero del equipo filial 2. Si no hay equipo filial se pone un FFFF.
+- 01: Grupo de 2ºB al que pertenecería en caso de descenso. Para equipos que no sean de España se guarda un 00 (o se puede guardar cualquier valor, el juego no lo leerá).
+- 0100010001000100010001000100010001000100: Puesto de las últimas 10 ligas. Los bytes se separan en parejas PUESTO-LIGA, siendo los 2 primeros el puesto y los dos siguientes la liga jugada (00 es primera división, 01 es segunda división, 02 es segunda división b y 03 es tercera división). Por ejemplo, la pareja 0501 indica que el equipo quedó quinto en segunda división. La cadena ocupa 40 caracteres.
+- 00: Cadena que indica el número de temporadas en primera división.
+- 0000: Indica el número de partidos jugados. Hay que darles la vuelta a los bytes para convertirlo a decimal.
+- 0000: Indica el número de partidos ganados. Hay que darles la vuelta a los bytes para convertirlo a decimal.
+- 0000: Indica el número de partidos empatados. Hay que darles la vuelta a los bytes para convertirlo a decimal.
+- 0000: Indica el número de goles a favor. Hay que darles la vuelta a los bytes para convertirlo a decimal.
+- 0000: Indica el número de goles en contra. Hay que darles la vuelta a los bytes para convertirlo a decimal.
+- 0000: Indica el número de puntos conseguidos. Hay que darles la vuelta a los bytes para convertirlo a decimal.
+- 00: Indica el número de veces que el equipo fue campeón.
+- 00: Indica el número de veces que el equipo fue subcampeón.
+- 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000: Cadena que indica las posiciones del equipo en las jornadas de la base de datos. Cadena que ocupa 92 caracteres. El editor siempre guarda esta cadena a ceros.
+- 00000000000000000000000000000000000000000000000000000000000000000000: Indica la cadena del palmarés del equipo en todas las competiciones. La cadena ocupa 34 caracteres.
+- 000042002A004200000058000000580000007E00F80045003B00A200BF00A000000000003E0142003B000B00B300170000004A00B000640021006F0073007B0000000000B100650022003C007000380022002D00FF006C0051004100C0004A006D005400D00071006D009A000201A70053003600EA005D0086003F0006013C006C003000D10075008A006A0016015A0043004900FA004A0052006000DB006D002E000000E000640070001900F5000600: Táctica definida para el equipo.
+- 46390001000001: Táctica de equipo. Se divide en:
+- - 46: Porcentaje de toque. En este aso 70%.
+- - 39: Porcentaje de contragolpe. En este caso 57%.
+- - 00: Tipo de ataque. (00 ofensivo, 01 especulativo y 02 mixto)
+- - 01: Tipo de entradas. (00 suave, 01 media y 02 agresiva)
+- - 00: Marcaje. (00 zona y 01 hombre)
+- - 00: Despejes. (00 jugado y 01 largo)
+- - 01: Tipo de presión. (00 propio, 01 medio y 02 rival
+- 02: Comienzo de la cadena de entrenador. Es una cadena fija.
+- 6906: Puntero del entrenador.
+- 0700 29080505080F0A: Longitud del nombre corto del entrenador seguido del nombre corto del entrenador. En este caso “Hiddink”.
+- 0C00 261414124129080505080F0A: Longitud del nombre largo seguido del nombre largo del entrenador. En este caso “Guus Hiddink”.
+- 0100 19: Longitud de perfil de entrenador seguido del perfil de entrenador. En este caso es “x” que es el valor por defecto que grabará el editor.
+- 0100 19: Longitud de los sistemas habituales del entrenador seguido de los sistemas habituales del entrenador. En este caso es “x” que es el valor por defecto que grabará el editor.
+- 0100 19: Longitud del palmarés de entrenador seguido del palmarés de entrenador. En este caso es “x” que es el valor por defecto que grabará el editor.
+- 0100 19: Longitud de las anécdotas del entrenador seguido de las anécdotas del entrenador. En este caso es “x” que es el valor por defecto que grabará el editor.
+- 0100 19: Longitud de la información de la última temporada del entrenador seguido de la información relativa a la última temporada del entrenador. En este caso es “x” que es el valor por defecto que grabará el editor.
+- 1000 2F254D2F254D2F254D2F254D2F256C6C: Longitud de la trayectoria del entrenador seguido de la trayectoria del entrenador. Esta es la cadena por defecto que grabará el editor y corresponde a los valores en decimal “ND,ND,ND,ND,ND==”.
+- 03: Separador que indica que el entrenador tiene trayectoria como jugador. Si esta pareja de bytes no es 03 se saltaría a las declaraciones del entrenador.
+- 1000 2F254D2F254D2F254D2F254D2F256C6C: Longitud de la trayectoria del entrenador como jugador seguido de la trayectoria del entrenador como jugador. Esta es la cadena por defecto que grabará el editor y corresponde a los valores en decimal “ND,ND,ND,ND,ND==”.
+- 0100 19: Longitud de las declaraciones del entrenador seguido de las declaraciones del entrenador.
+
+Notas sobre las versiones de archivos DBC: Pueden darse las siguientes excepciones:
+- Latitud del estadio: Par de bytes que van después del país del equipo que indican la latitud en la que se encuentra el estadio. El editor está preparado para leer estos bytes, aunque la versión que genera de los DBC nunca grabará dichos bytes.
+- Capacidad del estadio de pie: Dependiendo de la versión del archivo DBC la capacidad del estadio de pie puede aparecer o no. El editor está preparado para leer estos ficheros, y la versión de archivos DBC que genera contiene los bytes correspondientes a la capacidad del estadio de pie.
 
 Después de este dato vendrían los datos de los jugadores.
 
@@ -659,47 +761,42 @@ Después de este dato vendrían los datos de los jugadores.
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor46.png) 
 
-- 01 : Cadena fija que marca el comienzo de la cadena de jugador. Es la misma para todo jugador.
+01: Cadena fija que marca el comienzo de la cadena de jugador. Es la misma para todo jugador.
 - 5B00: Puntero del jugador. No puede repetirse dentro de un mismo equipo.
-- 01 : Dorsal del jugador.
+- 01: Dorsal del jugador.
 - 0800 220E1413150E0812: Longitud del nombre corto seguido del nombre corto del jugador.
 - 1D00 35090803001415412F08020E0D0012412C00130241222E3433352E2832: Longitud de nombre largo seguido del nombre largo del jugador.
-- 01 : Slot que ocupa en el equipo.
-- 00 : Procedencia del jugador. 00 Indica que continua. El editor siempre pondrá un 00 por defecto.
-- 010000000000 : Cadena de roles del jugador. Los posibles valores son 00 Vacío, 01 Portero, 02 Lateral derecho, 03 Lateral izquierdo, 04 Libre, 05 Central izquierdo, 06 Central derecho, 07 Centrocampista derecha, 08 Interior derecho, 09 Delantero centro, 0A Medio centro organizador, 0B Centrocampista izquierda, 0C Extremo derecho, 0D Media punta por el centro, 0E Extremo izquierdo, 0F Medio centro defensivo, 10 Media punta derecha, 11 Media punta izquierda y 12 Interior izquierdo. 
+- 01: Slot que ocupa en el equipo.
+- 00: Procedencia del jugador. 00 Indica que continua. El editor siempre pondrá un 00 por defecto.
+- 010000000000: Cadena de roles del jugador. Los posibles valores son 00 Vacío, 01 Portero, 02 Lateral derecho, 03 Lateral izquierdo, 04 Libre, 05 Central izquierdo, 06 Central derecho, 07 Centrocampista derecha, 08 Interior derecho, 09 Delantero centro, 0A Medio centro organizador, 0B Centrocampista izquierda, 0C Extremo derecho, 0D Media punta por el centro, 0E Extremo izquierdo, 0F Medio centro defensivo, 10 Media punta derecha, 11 Media punta izquierda y 12 Interior izquierdo.
 - 0C: Nacionalidad del jugador. Consultar la lista de códigos de países para conocer la correspondencia entre códigos y países.
-- 01 : Color de piel del jugador. Los posibles valores son 01 blanco, 02 negro o 03 mulato.
-- 06 : Color de pelo del jugador. Los posibles valores son 01 rubio, 02 sin pelo, 03 moreno, 04 blanco o canoso, 05 pelirrojo y 06 castaño.
-- 00 : Demarcación correspondiente al jugador. Los posibles valores son 00 Portero, 01 Defensa, 02 Medio o 03 Delantero.
+- 01: Color de piel del jugador. Los posibles valores son 01 blanco, 02 negro o 03 mulato.
+- 06: Color de pelo del jugador. Los posibles valores son 01 rubio, 02 sin pelo, 03 moreno, 04 blanco o canoso, 05 pelirrojo y 06 castaño.
+- 00: Demarcación correspondiente al jugador. Los posibles valores son 00 Portero, 01 Defensa, 02 Medio o 03 Delantero.
 - 0B05C807: Fecha de nacimiento del jugador. Compuesta por Día, Mes y año respectivamente.
 - C7: Altura correspondiente al jugador.
-- 60 : Peso correspondiente al jugador.
+- 60: Peso correspondiente al jugador.
 - 0C: País de nacimiento del jugador.
 - 0E00 23130404414923880D0608020048: Longitud del lugar de nacimiento seguido del lugar de nacimiento.
-- 01004F01004F01001901001901001901001901001901001910002F254D2F254D2F254D2F254D2F256C6B: Cadena fija.
-- 5654525C0D0E15191256: Medias del jugador, por este orden VE velocidad, RE resistencia, AG agresividad, CA calidad, RM remate, RG regate, PA pase, TI tiro, EN
-entradas y PO portero.
+- 0100 19: Longitud de club de debut seguida del club de debut. El editor por defecto grabará “x”.
+- 0100 19: Longitud de datos de internacional del jugador seguida de los datos de internacional del jugador. El editor por defecto grabará “x”.
+- 0100 19: Longitud de perfil del jugador seguida del perfil del jugador. El editor por defecto grabará “x”.
+- 0100 19: Longitud de las características del jugador seguida de las características del jugador. El editor por defecto grabará “x”.
+- 0100 19: Longitud del palmarés del jugador seguida del palmarés del jugador. El editor por defecto grabará “x”.
+- 0100 19: Longitud la internacionalidad del jugador seguida de la internacionalidad del jugador. El editor por defecto grabará “x”.
+- 0100 19: Longitud de las anécdotas del jugador seguida de las anécdotas del jugador. El editor por defecto grabará “x”.
+- 0100 19: Longitud de los datos de la última temporada del jugador seguida de los datos e la última temporada del jugador. El editor por defecto grabará “x”.
+- 1000 2F254D2F254D2F254D2F254D2F256C6B: Longitud de la trayectoria del jugador seguido de la trayectoria del jugador. Esta es la cadena por defecto que grabará el editor y corresponde a los valores en decimal “ND,ND,ND,ND,ND==”.
+- 5654525C0D0E15191256: Medias del jugador, por este orden VE velocidad, RE resistencia, AG agresividad, CA calidad, RM remate, RG regate, PA pase, TI tiro, EN entradas y PO portero.
 
 ### Diferencia entre archivos con formato 5.0 y formato 6.0
 
 El editor permite generar archivos con formato para versiones 5.0 o para versiones 6.0. Las diferencias entre ambos formatos son:
 
-- La cadena de comienzo de equipo es diferente:
-
-Para el 5.0: FB079F010000
-Para el 6.0: CB0803020000
-
-- La cadena de las dimensiones del campo es diferente:
-
-Para el 5.0: 0000000046006900
-Para el 6.0: 000000000000000046006900
-
 - El orden de las medias es diferente:
 
 Para el 5.0: VE, RE, AG, CA, RG, RM, PA, TI, EN, PO
 Para el 6.0: VE, RE, AG, CA, RM, RG, PA, TI, EN, PO
-
-Nota: Además de esto cambia alguna cadena que expongo como fija, como por ejemplo la cadena de comentarios del jugador. Lo mejor es generar un mismo equipo con el editor tanto en formato 5 como en 6 y ver las diferencias entre los archivos.
 
 
 
