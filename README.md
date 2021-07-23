@@ -55,15 +55,17 @@ No voy a nombrar a ninguno de los grandes que se han ido en este 2020, por que s
 - [Versiones del juego aceptadas por el editor](#versiones-del-juego-aceptadas-por-el-editor)
 - [Rutas que utiliza el editor](#rutas-que-utiliza-el-editor)
 - [Cargar archivo de equipos](#cargar-archivo-de-equipos)
+- [Generar DBC Originales](#generar-dbc-originales)
 - [Edición de Equipos](#edición-de-equipos)
 - [Edición de Jugadores](#edición-de-jugadores)
-- [Abrir Archivo DBC (Formato 5.0 y 6.0)](#abrir-archivo-dbc)
 - [Importar información desde la WEB](#importar-información-desde-la-web)
 - [Edición de competiciones](#edición-de-competiciones)
 - [Edición del Calendario](#edición-del-calendario)
 - [Selección de Escudos](#selección-de-escudos)
 - [Selección de Fotos de jugadores](#selección-de-fotos-de-jugadores)
 - [Actualización masiva desde una web](#actualización-masiva-desde-una-web)
+- [Intercambio de jugadores](#intercambio-de-jugadores)
+- [Juveniles](#juveniles)
 - [Utilidades](#utilidades)
 - [Logs](#logs)
 - [Edición hexadecimal de archivos DBC](#edición-hexadecimal-de-archivos-dbc)
@@ -93,7 +95,8 @@ El editor funciona para las siguientes versiones del juego:
 - PC Premier 6.0: Archivo de equipos EQ030022.PKF. Tamaño del manager 2771 KB.
 - PC Calcio 6.0: Archivo de equipos EQ036022.PKF. Tamaño del manager 2513 KB.
 - PC Apertura 6.0: Archivo de equipos EQ003003.PKF. Tamaño del manager 2397 KB.
-- Para el resto de versiones se pueden generar y editar archivos DBC pero no se permite editar las competiciones ni el calendario.
+- Cualquier versión de PC Fútbol 5.0 (original, extensiones y edición oro).
+- Además, funciona con versiones raras basadas en PC Fútbol 5 y 6 como por ejemplo PC River o PC Real Madrid.
 
 En estas versiones se pueden editar lo siguiente:
 
@@ -170,6 +173,32 @@ En la lista de equipos se informa de si el equipo corresponde a una liga extranj
 
 Dependiendo de la versión un equipo puede ser de liga nacional o de liga extranjera, por ejemplo, para la versión argentina los equipos nacionales (los que contienen información de base de datos) son los que tienen el país Argentina. Estos mismos equipos en la versión Premier por ejemplo están considerados como de liga extranjera, no guardando por tanto ninguna información de base de datos. A la hora de guardar un archivo DBC el editor nos permite generar el archivo como si fuese para liga extrajera o para liga nacional, o ambos ficheros a la vez.
 
+### Abrir archivo DBC
+
+Con esta opción podremos cargar un archivo DBC para su posterior edición. El editor será capaz de identificar si se trata de un DBC de PCF 5.x o PCF 6.x y cargará todos los datos del equipo para su edición.
+
+#### Error valor de letra no conocido
+
+A la hora de abrir un archivo DBC nos puede dar un error de “Valor de letra no conocido”. Esto es debido a que hay algún par de bytes del archivo DBC que no se reconocen para traducirlos a lenguaje decimal. Esto es debido a que en la información original del juego se cometió algún error y el carácter utilizado no es el correcto.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/error_valor_desconocido.png) 
+
+Para solucionar este tipo de errores tendremos que hacer lo siguiente:
+- Abrir el archivo DBC con un editor hexadecimal. Aconsejable HexWorkshop.
+- Utilizar el archivo de mapa correspondiente al PC Fútbol (es un mapa de PC Fútbol Site).
+- Buscar dentro del archivo los pares de bytes desconocidos (en el caso del ejemplo sería “3F”).
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/error_valor_desconocido_2.png) 
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/error_valor_desconocido_1.png) 
+
+- Una vez encontrado nos quedaremos con el valor en decimal, que sale en la parte derecha del editor hexadecimal. En el caso del ejemplo el símbolo será un “^”.
+
+![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/error_valor_desconocido_3.png) 
+
+- Abriremos el archivo map.txt, situado en la raíz de la carpeta del editor y añadiremos el valor encontrado. En este caso hay que añadir “3F : ^”.
+- Una vez hecho esto repetiremos la carga del archivo DBC, y ya no debería dar el error.
+
 ### Nuevo archivo DBC
 
 Desde esta pantalla podremos generar un archivo DBC de múltiples formas. Podremos cargar
@@ -191,7 +220,7 @@ Para guardar el fichero tendremos las siguientes opciones.
 
 3: No guardar información de base de datos del juego: Si marcamos esta opción se guardará el equipo sin tener en cuenta la información de base de datos, esta opción sólo es útil para equipos de Liga Nacional (que tengan el campo Liga Extranjera NO) ya que es para los únicos para los que se puede grabar información de base de datos. Si marcamos esta opción por tanto no se guardará la información de base de datos relativa a información de jugadores, entrenadores y datos de competiciones, y en su lugar se guardará una cadena genérica con una “x”.
 
-4: Generar versiones nacional y extranjera: Esta opción nos permitirá guardar 2 archivos DBC, uno con el formato de equipo de liga nacional y otro con formato de liga extranjera. Esto puede ser útil cuando estamos editando varias versiones del juego. Por ejemplo, para la versión española el Sevilla debería tener el campo Liga Extranjera NO, pero para la versión argentina debería tener Liga Extranjera SI. Dependiendo de si es un equipo de Liga Extranjera o no se guardará más o menos información en el fichero DBC. Por tanto, con esta opción podemos generar los dos ficheros con de una sola tacada.
+4: Generar versiones nacional y extranjera: Esta opción nos permitirá guardar 2 archivos DBC, uno con el formato de equipo de liga nacional y otro con formato de liga extranjera. Esto puede ser útil cuando estamos editando varias versiones del juego. Por ejemplo, para la versión española el Sevilla debería tener el campo Liga Extranjera NO, pero para la versión argentina debería tener Liga Extranjera SI. Dependiendo de si es un equipo de Liga Extranjera o no se guardará más o menos información en el fichero DBC. Por tanto, con esta opción podemos generar los dos ficheros con de una sola tacada. Los ficheros generados tendrán el nombre que hayamos elegido (nombre del equipo o nombre con formato PCF, es decir EQXXXXXX.DBC) seguido de de los literales “_BBDD.DBC” para los equipos creados de liga nacional, y “_NO_BBDD.DBC” para los equipos creados de liga extranjera.
 
 5: Utilizar punteros propios del DBC para los jugadores: Esta opción sólo estará disponible si cargamos un fichero DBC. Si marcamos esta opción no se utilizarán los punteros para los jugadores sugeridos por el editor, sino que se respetarán los punteros de jugadores que ya tuviese el fichero DBC.
 
@@ -253,6 +282,8 @@ Editar jugador: Nos llevará a la pantalla de edición de jugadores con los dato
 Borrar jugador: borrará el jugador de la plantilla del equipo.
 
 Copiar jugador: Creará una copia exacta del jugador seleccionado. El puntero del nuevo jugador se copiará vacío, para que al guardar el equipo se le asigne uno.
+
+El límite de jugadores por equipo es de 35, salvo para los equipos de juveniles que el límite será de 98.
 
 #### Pestaña de Datos de Competiciones
 
@@ -470,6 +501,8 @@ carga un manager que ya esté editado por algún usuario.
 Si presionamos el botón de guardar el nuevo archivo manager.exe estará ubicado en la ruta
 “\Manager”.
 
+Si queremos editar el calendario de una versión diferente a las mostradas en las opciones (por ejemplo, los manager de las versiones ORO) siempre tendremos que seleccionar la opción “OTROS”. Esto nos obliga a tener que cambiar siempre desde el archivo manager original, debido a que el editor no sabe los offsets que hay que tocar para otros archivos a los expuestos en las opciones de pantalla.
+
 NOTA: El efecto 2000 consiste en que el juego tenía un límite para las edades de los jugadores, de tal forma que si un jugador es nacido en años superiores al 2000 su fecha de nacimiento se determinaba de forma aleatorio sin respetar la fecha que se le asigna al jugador en la edición. Lasignación es totalmente aleatoria, lo cual es un problema para jugadores nacidos más allá del 2000. Para ello hay que sustituir la cadena 6C070000760881FDD0070000 por 01000000760881FDFFFF0000, que es exactamente lo que hace el editor cuando se marca la opción de aplicar el parche para el efecto 2000.
 
 ## Selección de Escudos
@@ -543,6 +576,8 @@ La foto estándar es el archivo “NOFOTO.bmp” que se encuentra en la raíz de
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor34.png) 
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/editor35.png) 
+
+Las fotos seleccionadas se transformarán a 32x32 pixeles.
 
 ## Actualización masiva desde una web
 
@@ -788,15 +823,3 @@ Después de este dato vendrían los datos de los jugadores.
 - 0100 19: Longitud de los datos de la última temporada del jugador seguida de los datos e la última temporada del jugador. El editor por defecto grabará “x”.
 - 1000 2F254D2F254D2F254D2F254D2F256C6B: Longitud de la trayectoria del jugador seguido de la trayectoria del jugador. Esta es la cadena por defecto que grabará el editor y corresponde a los valores en decimal “ND,ND,ND,ND,ND==”.
 - 5654525C0D0E15191256: Medias del jugador, por este orden VE velocidad, RE resistencia, AG agresividad, CA calidad, RM remate, RG regate, PA pase, TI tiro, EN entradas y PO portero.
-
-### Diferencia entre archivos con formato 5.0 y formato 6.0
-
-El editor permite generar archivos con formato para versiones 5.0 o para versiones 6.0. Las diferencias entre ambos formatos son:
-
-- El orden de las medias es diferente:
-
-Para el 5.0: VE, RE, AG, CA, RG, RM, PA, TI, EN, PO
-Para el 6.0: VE, RE, AG, CA, RM, RG, PA, TI, EN, PO
-
-
-
