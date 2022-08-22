@@ -35,7 +35,7 @@ Podéis ver los videos del Editor funcionando en los siguientes enlaces de YouTu
 
 [Actualzación masiva desde una web](https://www.youtube.com/watch?v=IAcNQdtkJOE&feature=youtu.be&ab_channel=CarlosGonz%C3%A1lez)
 
-
+<!--
 ## Dedicatoria
 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria1.png) 
@@ -48,7 +48,7 @@ Quisiera dedicar este proyecto a todo el mundo que durante este año ha perdido 
 ![Editor PCF 6.0](https://github.com/carky12/EditorPCFutbol6/blob/master/Imagenes/dedicatoria7.jpg) 
 
 No voy a nombrar a ninguno de los grandes que se han ido en este 2020, por que sería injusto con respecto a los que se han ido y no son nombrados. Sin más mucha fuerza todos y ánimo para este 2021!
-
+-->
 ## Índice
 
 - [Introducción](#introducción).
